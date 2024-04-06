@@ -1,0 +1,111 @@
+body {
+    background-color: #fafafa;
+    margin: 10px;
+    padding: 15px;
+    line-height: 1.5;
+    text-align: center;
+    font-family: 'Helvetica', sans-serif;
+}
+
+h1, h2, h3 {
+    font-weight: normal;
+    margin: 20px 0px;
+    color: #1a1a1a;
+    text-align: center;
+}
+
+h1 {
+    font-size: xx-large;
+}
+
+h2 {
+    font-size: large;
+    font-style: normal;
+}
+
+h3 {
+    font-size: small;
+    text-decoration: none;
+}
+
+main img {
+    max-width: 100%;
+    border: solid 4px #4caf50;
+    border-radius: 8px;
+}
+
+p {
+    line-height: 1.8;
+    font-family: 'Verdana', sans-serif;
+    color: #1a1a1a;
+    background-color: #f0f0f0;
+    margin-bottom: 15px;
+    text-align: justify;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.button1, .button2, .button3, .button4 {
+    background-color: #ff69b4;
+    border: none;
+    color: white;
+    padding: 12px 28px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    margin: 6px 4px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.button1:hover, .button2:hover, .button3:hover, .button4:hover {
+    background-color: #ff407a; 
+    color: white;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 15px;
+}
+
+.gallery img {
+    width: 100%;
+    max-width: 300px;
+    margin: 10px 0;
+    border: solid 2px #ff69b4;
+
+/* Existing CSS */
+
+/* Skip to Content link styling */
+.offpage {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.offpage:focus, .offpage:active {
+    position: static;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    color: #000; /* Change as needed */
+    background-color: #fff; /* Change as needed */
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+}
+
+/* Navigation link to the current page styling */
+nav ul li a.active {
+    color: #4caf50; /* Unique color for active link */
+    font-weight: bold;
+}
+
+/* Add here responsive design adjustments with media queries for different grid layouts */
