@@ -78,9 +78,7 @@ p {
     margin: 10px 0;
     border: solid 2px #ff69b4;
 
-/* Existing CSS */
 
-/* Skip to Content link styling */
 .offpage {
     position: absolute;
     left: -10000px;
@@ -102,10 +100,23 @@ p {
     border: 1px solid #ddd;
 }
 
-/* Navigation link to the current page styling */
 nav ul li a.active {
-    color: #4caf50; /* Unique color for active link */
+    color: #4caf50; 
     font-weight: bold;
 }
 
-/* Add here responsive design adjustments with media queries for different grid layouts */
+@media (min-width: 768px) and (max-width: 1024px) {
+}
+
+@media (min-width: 1025px) {
+}
+
+body.light-mode {
+    background-color: #fff;
+    color: #000;
+}
+
+body.dark-mode {
+    background-color: #333;
+    color: #fff;
+}
