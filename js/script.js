@@ -7,29 +7,24 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    function typeWriter(elements) {
-        elements.forEach(({ elementId, text, speed }) => {
-            const element = document.getElementById(elementId);
-            if (element) {
-                let i = 0;
-                function type() {
-                    if (i < text.length) {
-                        element.innerHTML += text.charAt(i);
-                        i++;
-                        setTimeout(type, speed);
-                    }
-                }
-                type();
-            }
-        });
-    }
-
-    const pageTexts = [
-        { elementId: 'typewriter-text-index', text: 'Welcome to My Home Page!', speed: 100 },
-        { elementId: 'typewriter-text-pets', text: 'Discover Our Pet Care Tips!', speed: 100 },
-        { elementId: 'typewriter-text-recipes', text: 'Explore Delicious Recipes!', speed: 100 },
-        { elementId: 'typewriter-text-travel', text: 'Travel With Us Around the World!', speed: 100 }
+    const typewriterTargets = [
+        { id: 'typewriter-text-recipes', text: 'Delicious Recipes Await!' },
+        { id: 'typewriter-text-pets', text: 'Care for Your Beloved Pets' },
+        { id: 'typewriter-text-travel', text: 'Explore the World With Us' }
     ];
 
-    typeWriter(pageTexts);
+    typewriterTargets.forEach(target => {
+        const element = document.getElementById(target.id);
+        if (element) {
+            let i = 0;
+            function type() {
+                if (i < target.text.length) {
+                    element.innerHTML += target.text.charAt(i);
+                    i++;
+                    setTimeout(type, 100);
+                }
+            }
+            type();
+        }
+    });
 });
