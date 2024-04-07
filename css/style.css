@@ -8,17 +8,17 @@ body {
     transition: background-color 0.3s, color 0.3s;
 }
 
-h1, h2, h3 {
-    font-weight: normal;
-    margin: 20px 0px;
-    color: #1a1a1a;
-    text-align: center;
-}
-
 h1 {
     font-size: xx-large;
     font-weight: bold;
     color: #4caf50;
+}
+
+h2, h3 {
+    font-weight: bold;
+    margin: 20px 0px;
+    color: #00FF00;
+    text-align: center;
 }
 
 h2, .section h2, .info h3 {
