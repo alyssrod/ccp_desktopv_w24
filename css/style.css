@@ -33,6 +33,31 @@ h3 {
     text-decoration: none;
 }
 
+.offpage {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.offpage:focus, .offpage:active {
+    position: fixed;
+    left: 10px;
+    top: 10px;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    z-index: 1000;
+    background-color: #fff;
+    padding: 15px;
+    border: 2px solid #4caf50;
+    margin: 0;
+    clip: auto;
+}
+
+
 img, main img {
     max-width: 100%;
     height: auto; /* Ensures images are responsive */
