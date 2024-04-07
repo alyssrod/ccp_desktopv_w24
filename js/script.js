@@ -1,30 +1,27 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const checkbox = document.getElementById('checkbox');
-    checkbox.addEventListener('change', function(e) {
-        if (e.target.checked) {
-            document.body.classList.add('dark-mode');
-            document.body.classList.remove('light-mode');
-        } else {
-            document.body.classList.add('light-mode');
-            document.body.classList.remove('dark-mode');
-        }
-    });
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    if (themeToggleBtn) {
+        themeToggleBtn.addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+            document.body.classList.toggle('light-mode');
+        });
+    }
 
     function typeWriter(elementId, text, speed) {
         let i = 0;
         const element = document.getElementById(elementId);
-        if (!element) {
-            console.log(`Element with ID ${elementId} not found.`);
-            return;
-        }
-        function type() {
-            if (i < text.length) {
-                element.innerHTML += text.charAt(i);
-                i++;
-                setTimeout(type, speed);
+        if (element) {
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                }
             }
+            type();
         }
-        type();
     }
-    typeWriter('typewriter-text', 'Welcome to My Page!', 100);
+    if (document.getElementById('typewriter-text')) {
+        typeWriter('typewriter-text', 'Welcome to My Page!', 100);
+    }
 });
