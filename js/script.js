@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const themeToggleBtn = document.getElementById('theme-toggle');
-    if (themeToggleBtn) {
-        themeToggleBtn.addEventListener('click', function() {
-            document.body.classList.toggle('dark-mode');
-            document.body.classList.toggle('light-mode');
+    const checkbox = document.getElementById('checkbox');
+    if (checkbox) {
+        checkbox.addEventListener('change', function() {
+            document.body.classList.toggle('dark-mode', checkbox.checked);
+            document.body.classList.toggle('light-mode', !checkbox.checked);
         });
     }
 
