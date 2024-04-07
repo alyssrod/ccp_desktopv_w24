@@ -93,16 +93,40 @@ p {
     width: auto;
     height: auto;
     overflow: visible;
-    color: #000; 
-    background-color: #fff; 
+    color: #000;
+    background-color: #fff;
     padding: 10px;
     margin: 10px 0;
     border: 1px solid #ddd;
 }
 
-nav ul li a.active {
-    color: #4caf50; 
+/* Navigation Styling */
+nav {
+    display: flex;
+    justify-content: center;
+    background: #333;
+    padding: 1rem 0;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
     font-weight: bold;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: #4caf50;
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
