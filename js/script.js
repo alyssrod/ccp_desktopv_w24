@@ -1,8 +1,10 @@
 document.addEventListener('DOMContentLoaded', function() {
     const themeToggleBtn = document.getElementById('theme-toggle');
     themeToggleBtn.addEventListener('click', function() {
+        console.log('Before toggle:', document.body.classList);
         document.body.classList.toggle('dark-mode');
         document.body.classList.toggle('light-mode');
+        console.log('After toggle:', document.body.classList);
     });
 
     function typeWriter(elementId, text, speed) {
