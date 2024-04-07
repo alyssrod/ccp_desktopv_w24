@@ -3,45 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="stylesheet" href="css/html5reset.css">
-      <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/html5reset.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>About Me</title>
 </head>
-<body>
+<body class="light-mode">
     <button id="theme-toggle">Toggle Theme</button>
     <header>
-        <a href = "#main-content" class = "offpage">Skip to Main Content</a>
+        <a href="#main-content" class="offpage">Skip to Main Content</a>
         <nav>
             <ul>
-                <li><a href = "index.html" class="active">Home</a></li>
-                <li><a href = "pets.html">Pets</a></li>
-                <li><a href = "recipes.html">Recipes</a></li>
-                <li><a href = "travel.html">Travel</a></li>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="pets.html">Pets</a></li>
+                <li><a href="recipes.html">Recipes</a></li>
+                <li><a href="travel.html">Travel</a></li>
             </ul>
         </nav>
-
     </header>
     <main id="main-content">
-        <div class ="welcome">
-            <p>Welcome to my website, your go-to destination for all things pets, recipes, and travel! Explore a world of captivating content where we cater to your love for furry companions, culinary delights, and globetrotting adventures. </p>
-
+        <div class="welcome">
+            <p>Welcome to my website, your go-to destination for all things pets, recipes, and travel! Explore a world of captivating content where we cater to your love for furry companions, culinary delights, and globetrotting adventures.</p>
         </div>
-
-<div><h1>ABOUT ME</h1>
-    <div class = 'grid'>
-    <p class ='intro'>Hello, my name is Alyssa Rodriguez. I am a Sophomore at the University of Michigan, and I am studying Data Science with an intended dual degree in UX Design. I really wanted to learn web development since the CS curriculum only focuses on back end development.</p>
-    <p class ='hobbies'>During my free time, I like to give back to all the communities I'm a part of through volunteer work. </p>
-    <p class ='experience'>I am expereience in C++, Python, HTML, CSS, and R I am looking for opportunities to expand upon the skills that I have gained from my education and experiences. </p>
-</div>
-</div>
-            
-            <!-- Jackie Wolf -->
-    
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
+        <div>
+            <h1>ABOUT ME</h1>
+            <div class='grid'>
+                <p class='intro'>Hello, my name is Alyssa Rodriguez. I am a Sophomore at the University of Michigan, and I am studying Data Science with an intended dual degree in UX Design. I really wanted to learn web development since the CS curriculum only focuses on back end development.</p>
+                <p class='hobbies'>During my free time, I like to give back to all the communities I'm a part of through volunteer work.</p>
+                <p class='experience'>I am experienced in C++, Python, HTML, CSS, and R. I am looking for opportunities to expand upon the skills that I have gained from my education and experiences.</p>
+            </div>
+        </div>
     </main>
-    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const themeToggleBtn = document.getElementById('theme-toggle');
+            themeToggleBtn.addEventListener('click', function() {
+                document.body.classList.toggle('dark-mode');
+                document.body.classList.toggle('light-mode');
+            });
+        });
+    </script>
 </body>
 </html>
