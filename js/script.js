@@ -1,15 +1,14 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const themeToggleBtn = document.getElementById('theme-toggle');
-    if (themeToggleBtn) {
-        themeToggleBtn.addEventListener('click', function() {
-            console.log('Before toggle:', document.body.classList);
-            document.body.classList.toggle('dark-mode');
-            document.body.classList.toggle('light-mode');
-            console.log('After toggle:', document.body.classList);
-        });
-    } else {
-        console.log('Theme toggle button not found.');
-    }
+    const checkbox = document.getElementById('checkbox');
+    checkbox.addEventListener('change', function(e) {
+        if (e.target.checked) {
+            document.body.classList.add('dark-mode');
+            document.body.classList.remove('light-mode');
+        } else {
+            document.body.classList.add('light-mode');
+            document.body.classList.remove('dark-mode');
+        }
+    });
 
     function typeWriter(elementId, text, speed) {
         let i = 0;
