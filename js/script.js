@@ -7,21 +7,29 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    function typeWriter(elementId, text, speed) {
-        let i = 0;
-        const element = document.getElementById(elementId);
-        if (element) {
-            function type() {
-                if (i < text.length) {
-                    element.innerHTML += text.charAt(i);
-                    i++;
-                    setTimeout(type, speed);
+    function typeWriter(elements) {
+        elements.forEach(({ elementId, text, speed }) => {
+            const element = document.getElementById(elementId);
+            if (element) {
+                let i = 0;
+                function type() {
+                    if (i < text.length) {
+                        element.innerHTML += text.charAt(i);
+                        i++;
+                        setTimeout(type, speed);
+                    }
                 }
+                type();
             }
-            type();
-        }
+        });
     }
-    if (document.getElementById('typewriter-text')) {
-        typeWriter('typewriter-text', 'Welcome to My Page!', 100);
-    }
+
+    const pageTexts = [
+        { elementId: 'typewriter-text-index', text: 'Welcome to My Home Page!', speed: 100 },
+        { elementId: 'typewriter-text-pets', text: 'Discover Our Pet Care Tips!', speed: 100 },
+        { elementId: 'typewriter-text-recipes', text: 'Explore Delicious Recipes!', speed: 100 },
+        { elementId: 'typewriter-text-travel', text: 'Travel With Us Around the World!', speed: 100 }
+    ];
+
+    typeWriter(pageTexts);
 });
