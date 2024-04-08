@@ -1,3 +1,4 @@
+/* General Styles */
 body {
     background-color: #fafafa;
     margin: 10px;
@@ -8,112 +9,55 @@ body {
     transition: background-color 0.3s, color 0.3s;
 }
 
-h1 {
-    font-size: xx-large;
-    font-weight: bold;
-    color: #006400;
+/* Typewriter Text Spacing */
+#typewriter-text-index, #typewriter-text-pets, #typewriter-text-recipes, #typewriter-text-travel {
+    margin-bottom: 2rem; /* Adds space between the typewriter text and the content below */
 }
 
-h2, h3 {
-    font-weight: bold;
-    margin: 20px 0px;
-    color: #006400;
-    text-align: center;
-}
-
-h2, .section h2, .info h3 {
-    font-size: large;
-    font-style: normal;
-}
-
-h3 {
-    font-size: medium; 
-    text-decoration: none;
-}
-
-.offpage {
-    position: absolute;
-    left: -10000px;
-    top: auto;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-}
-
-.offpage:focus, .offpage:active {
-    position: fixed;
-    left: 10px;
-    top: 10px;
-    width: auto;
-    height: auto;
-    overflow: visible;
-    z-index: 1000;
-    background-color: #fff;
-    padding: 15px;
-    border: 2px solid #4caf50;
+/* Navigation Bar */
+nav ul {
+    list-style: none;
+    padding: 0;
     margin: 0;
-    clip: auto;
-}
-
-img, main img {
-    max-width: 100%;
-    height: auto;
-    border: solid 4px #4caf50;
-    border-radius: 8px;
-    margin-bottom: 15px;
-}
-
-p, .toggle p {
-    line-height: 1.8;
-    font-family: 'Verdana', sans-serif;
-    color: #1a1a1a;
-    background-color: #f0f0f0;
-    margin-bottom: 15px;
-    text-align: justify;
-    padding: 15px;
-    border-radius: 8px;
-}
-
-.button1, .button2, .button3, .button4 {
-    background-color: #ff69b4;
-    border: none;
-    color: white;
-    padding: 12px 28px;
     text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
     text-decoration: none;
-    display: inline-block;
-    font-size: 18px;
-    margin: 6px 4px;
-    cursor: pointer;
-    border-radius: 8px;
-    transition: background-color 0.3s, color 0.3s;
+    color: #333;
 }
 
-.button1:hover, .button2:hover, .button3:hover, .button4:hover {
-    background-color: #ff407a;
-    color: white;
-}
-
-/* Adjusted Layout & Flexbox for Gallery and Sections */
-.gallery, .info, .section {
+/* Responsive Image Gallery */
+.gallery {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 15px;
+    justify-content: center;
+    gap: 20px; /* Adjust the gap between images */
+    margin-bottom: 2rem; /* Space below the gallery before the next section */
 }
 
-.section, .info {
-    flex-direction: column;
-    align-items: center;
+.gallery img {
+    max-width: 100%;
+    height: auto;
+    border: 2px solid #4caf50; /* Consistent border color for images */
 }
 
-@media (min-width: 768px) {
-    .section, .info {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: flex-start;
+/* Responsive Sections */
+.section {
+    margin-bottom: 2rem; /* Space between sections */
+}
+
+@media (max-width: 768px) {
+    .gallery, .section {
+        flex-direction: column;
+        align-items: center;
     }
-    
+}
     .section > *, .info > * {
         flex-basis: 48%;
     }
