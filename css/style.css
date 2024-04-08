@@ -11,13 +11,13 @@ body {
 h1 {
     font-size: xx-large;
     font-weight: bold;
-    color: #4caf50;
+    color: #006400;
 }
 
 h2, h3 {
     font-weight: bold;
     margin: 20px 0px;
-    color: #4caf50; /* Using bright green for visibility */
+    color: #006400;
     text-align: center;
 }
 
@@ -27,7 +27,7 @@ h2, .section h2, .info h3 {
 }
 
 h3 {
-    font-size: medium; /* Adjusting for better readability */
+    font-size: medium; 
     text-decoration: none;
 }
 
