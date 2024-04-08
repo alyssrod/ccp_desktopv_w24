@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     const typewriterTargets = [
+        { id: 'typewriter-text-index', text: 'Welcome to My Page!' },
         { id: 'typewriter-text-recipes', text: 'Delicious Recipes Await!' },
         { id: 'typewriter-text-pets', text: 'Care for Your Beloved Pets' },
         { id: 'typewriter-text-travel', text: 'Explore the World With Us' }
