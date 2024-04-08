@@ -1,4 +1,3 @@
-/* General Styles */
 body {
     background-color: #fafafa;
     margin: 10px;
@@ -9,77 +8,9 @@ body {
     transition: background-color 0.3s, color 0.3s;
 }
 
-/* Typewriter Text Spacing */
 #typewriter-text-index, #typewriter-text-pets, #typewriter-text-recipes, #typewriter-text-travel {
-    margin-bottom: 2rem; /* Adds space between the typewriter text and the content below */
-}
-
-/* Navigation Bar */
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    text-align: center;
-}
-
-nav ul li {
-    display: inline;
-    margin-right: 20px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #333;
-}
-
-/* Responsive Image Gallery */
-.gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px; /* Adjust the gap between images */
-    margin-bottom: 2rem; /* Space below the gallery before the next section */
-}
-
-.gallery img {
-    max-width: 100%;
-    height: auto;
-    border: 2px solid #4caf50; /* Consistent border color for images */
-}
-
-/* Responsive Sections */
-.section {
-    margin-bottom: 2rem; /* Space between sections */
-}
-
-@media (max-width: 768px) {
-    .gallery, .section {
-        flex-direction: column;
-        align-items: center;
-    }
-}
-    .section > *, .info > * {
-        flex-basis: 48%;
-    }
-}
-
-@media (max-width: 768px) {
-    .gallery img, .info, .section {
-        flex-direction: column;
-        width: 100%;
-    }
-    
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    nav ul li {
-        margin: 10px 0;
-    }
-}
-
-/* Navigation & Theme Switch Styling */
+    margin-bottom: 2rem; 
+] 
 nav {
     display: flex;
     justify-content: center;
@@ -93,11 +24,12 @@ nav ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin: 0; 
 }
 
 nav ul li {
     display: inline;
-    margin: 0 15px;
+    margin: 0 15px; 
 }
 
 nav ul li a {
@@ -107,14 +39,48 @@ nav ul li a {
 }
 
 nav ul li a:hover, nav ul li a.active {
-    color: #4caf50;
+    color: #4caf50; 
+}
+
+.gallery, .gallery3 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; 
+    margin-bottom: 2rem; 
+}
+
+.gallery img, .gallery3 img {
+    max-width: 100%;
+    height: auto;
+    border: 2px solid #4caf50; 
+}
+
+.section {
+    margin-bottom: 2rem; 
+}
+
+@media (max-width: 768px) {
+    .gallery, .gallery3, .section {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    nav ul li {
+        margin: 10px 0; 
+    }
 }
 
 .theme-switch-wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 20px;
+    margin: 2rem auto; 
 }
 
 .theme-switch {
@@ -124,7 +90,7 @@ nav ul li a:hover, nav ul li a.active {
     height: 34px;
 }
 
-.theme-switch input[type="checkbox"]{
+.theme-switch input[type="checkbox"] {
     opacity: 0;
     width: 0;
     height: 0;
@@ -155,11 +121,11 @@ nav ul li a:hover, nav ul li a.active {
 }
 
 input:checked + .slider {
-    background-color: #66bb6a; 
+    background-color: #66bb6a;
 }
 
 input:checked + .slider:before {
-    transform: translateX(26px); 
+    transform: translateX(26px);
 }
 
 .slider.round {
@@ -167,13 +133,37 @@ input:checked + .slider:before {
 }
 
 body.dark-mode {
-    background-color: #333; 
-    color: #fff; 
+    background-color: #333;
+    color: #fff;
 }
 
 body.light-mode {
-    background-color: #fff; 
-    color: #333; 
+    background-color: #fff;
+    color: #333;
+}
+
+.offpage {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.offpage:focus, .offpage:active {
+    position: fixed;
+    left: 10px;
+    top: 10px;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    z-index: 1000;
+    background-color: #fff;
+    padding: 15px;
+    border: 2px solid #4caf50;
+    margin: 0;
+    clip: auto;
 }
 
 .info, .section, .toggle {
