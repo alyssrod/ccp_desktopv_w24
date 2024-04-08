@@ -1,15 +1,14 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
-    
-    function switchTheme(e) {
-        if (e.target.checked) {
-            document.body.setAttribute('class', 'dark-mode');
-        } else {
-            document.body.setAttribute('class', 'light-mode');
-        }
-    }
+const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
 
-    toggleSwitch.addEventListener('change', switchTheme, false);
+function switchTheme(e) {
+    if (e.target.checked) {
+        document.documentElement.setAttribute('class', 'dark-mode');
+    } else {
+        document.documentElement.setAttribute('class', '');
+    }
+}
+
+toggleSwitch.addEventListener('change', switchTheme, false);
 
     const typewriterText = "Welcome to Alyssa's Website!";
     let i = 0;
