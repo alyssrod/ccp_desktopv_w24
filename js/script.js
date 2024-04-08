@@ -2,30 +2,46 @@ document.addEventListener('DOMContentLoaded', function() {
     const checkbox = document.getElementById('checkbox');
     if (checkbox) {
         checkbox.addEventListener('change', function() {
-            document.body.classList.toggle('dark-mode', checkbox.checked);
-            document.body.classList.toggle('light-mode', !checkbox.checked);
+            if (this.checked) {
+                document.body.classList.remove('light-mode');
+                document.body.classList.add('dark-mode');
+            } else {
+                document.body.classList.remove('dark-mode');
+                document.body.classList.add('light-mode');
+            }
         });
     }
 
-    const typewriterTargets = [
-        { id: 'typewriter-text-index', text: 'Welcome to My Page!' },
-        { id: 'typewriter-text-recipes', text: 'Delicious Recipes Await!' },
-        { id: 'typewriter-text-pets', text: 'Care for Your Beloved Pets' },
-        { id: 'typewriter-text-travel', text: 'Explore the World With Us' }
-    ];
-
-    typewriterTargets.forEach(target => {
-        const element = document.getElementById(target.id);
-        if (element) {
-            let i = 0;
-            function type() {
-                if (i < target.text.length) {
-                    element.innerHTML += target.text.charAt(i);
-                    i++;
-                    setTimeout(type, 100);
-                }
+    function typeWriter(text, id, speed = 100) {
+        const element = document.getElementById(id);
+        if (!element) return; // Exit if element not found
+        
+        let i = 0;
+        function typing() {
+            if (i < text.length) {
+                element.innerHTML += text.charAt(i);
+                i++;
+                setTimeout(typing, speed);
             }
-            type();
         }
-    });
+        typing();
+    }
+
+    const pageTitle = document.title;
+    switch (pageTitle) {
+        case 'About Me':
+            typeWriter('Welcome to My About Me Page!', 'typewriter-text-index');
+            break;
+        case 'Pets':
+            typeWriter('Explore Our Furry Friends!', 'typewriter-text-pets');
+            break;
+        case 'Recipes':
+            typeWriter('Discover Delicious Recipes!', 'typewriter-text-recipes');
+            break;
+        case 'Travel':
+            typeWriter('Join Our Travel Adventures!', 'typewriter-text-travel');
+            break;
+        default:
+            console.log('No typewriter text set for this page.');
+    }
 });
