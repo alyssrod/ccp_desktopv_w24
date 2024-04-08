@@ -1,70 +1,74 @@
+/* General Styles */
 body {
+    background-color: var(--bg-color);
     margin: 0;
     padding: 0;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', 'roboto', sans-serif;
     transition: background-color 0.3s, color 0.3s;
-    background-color: var(--bg-color);
-    color: var(--text-color);
 }
 
-:root {
-    --bg-color: #fafafa; 
-    --text-color: #333;   
-    --border-color: #ccc; 
+body.light-mode {
+    --bg-color: #fafafa;
+    color: #000;
 }
 
-.dark-mode {
-    --bg-color: #333;     
-    --text-color: #fafafa;
-    --border-color: #666; 
+body.dark-mode {
+    --bg-color: #363537;
+    color: #FAFAFA;
 }
 
-/* Skip Link */
 .skip {
     position: absolute;
     left: -9999px;
 }
 
 .skip:focus {
-    position: fixed;
-    left: 10px;
-    top: 10px;
-    background-color: var(--bg-color);
+    position: static;
+    display: block;
+    width: 100%;
+    height: auto;
     color: var(--text-color);
-    z-index: 100;
-    padding: 8px;
-    border-radius: 5px;
-    border: 2px solid var(--border-color);
+    text-align: center;
+    font-size: 1.2em;
+    font-family: 'Times New Roman', Times, serif;
+    z-index: 2000;
+    background: var(--bg-color);
+    padding: 1rem;
+    border: 2px dashed var(--text-color);
+    top: 10px;
+    left: 10px;
 }
 
+/* Navigation Styles */
 nav ul {
-    list-style-type: none;
-    margin: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
     padding: 20px;
     background-color: var(--bg-color);
-    text-align: center;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 10px;
+    margin: 0;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
 }
 
 nav ul li a {
     text-decoration: none;
     color: var(--text-color);
-    padding: 5px 10px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-nav ul li a.active, nav ul li a:hover {
-    border-bottom: 2px solid var(--text-color);
+nav ul li a:hover, nav ul li a.active {
+    background-color: var(--text-color);
+    color: var(--bg-color);
 }
 
+/* Toggle Switch */
 .theme-switch-wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 20px 0;
+    margin: 1rem;
 }
 
 .theme-switch {
@@ -88,7 +92,7 @@ nav ul li a.active, nav ul li a:hover {
     right: 0;
     bottom: 0;
     background-color: #ccc;
-    transition: 0.4s;
+    transition: .4s;
     border-radius: 34px;
 }
 
@@ -100,7 +104,7 @@ nav ul li a.active, nav ul li a:hover {
     left: 4px;
     bottom: 4px;
     background-color: white;
-    transition: 0.4s;
+    transition: .4s;
     border-radius: 50%;
 }
 
@@ -116,41 +120,44 @@ input:checked + .slider:before {
     border-radius: 34px;
 }
 
-h1, h2, h3, p {
+/* Typewriter Text */
+#typewriter-text-index, #typewriter-text-pets, #typewriter-text-recipes, #typewriter-text-travel {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 20px 0;
+    text-align: center;
+}
+
+/* Additional Styles for Content and Images */
+.content-section, .photogallery, .text-box {
+    padding: 20px;
     margin: 20px 0;
 }
 
-.content-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 20px;
-}
-
-.text-box {
-    background-color: var(--bg-color);
-    border: 2px solid var(--border-color);
+.photogallery div, .text-box {
+    margin-bottom: 20px;
+    background-color: #eee;
     padding: 20px;
     border-radius: 10px;
-}
-
-.gallery, .photogallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
-
-.gallery img, .photogallery img {
-    width: 100%;
-    max-width: 400px;
-    border: 3px solid var(--border-color);
-    border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
+.photogallery img {
+    max-width: 100%;
+    height: auto;
+    margin: 10px 0;
+    border-radius: 10px;
+}
+
+/* Responsive Grid for Photogallery */
+.photogallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+}
+
 @media screen and (max-width: 768px) {
-    .content-grid {
-        grid-template-columns: 1fr;
+    .theme-switch-wrapper span {
+        display: none; /* Hide labels on smaller screens */
     }
 }
