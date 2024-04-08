@@ -1,26 +1,26 @@
-const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+document.addEventListener('DOMContentLoaded', () => {
+    const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+    toggleSwitch.addEventListener('change', switchTheme, false);
 
-function switchTheme(e) {
-    if (e.target.checked) {
-        document.documentElement.setAttribute('class', 'dark-mode');
-    } else {
-        document.documentElement.setAttribute('class', '');
-    }
-}
-
-toggleSwitch.addEventListener('change', switchTheme, false);
-
-    const typewriterText = "Welcome to Alyssa's Website!";
-    let i = 0;
-    const speed = 50; 
-
-    function typeWriter() {
-        if (i < typewriterText.length) {
-            document.getElementById("typewriter-text-index").innerHTML += typewriterText.charAt(i);
-            i++;
-            setTimeout(typeWriter, speed);
+    function switchTheme(e) {
+        if (e.target.checked) {
+            document.body.setAttribute('class', 'dark-mode');
+        } else {
+            document.body.setAttribute('class', 'light-mode');
         }
     }
 
-    typeWriter();
+    function typeWriter(elementId, text, speed) {
+        let i = 0;
+        function type() {
+            if (i < text.length) {
+                document.getElementById(elementId).innerHTML += text.charAt(i);
+                i++;
+                setTimeout(type, speed);
+            }
+        }
+        type();
+    }
+
+    typeWriter('typewriter-text-travel', 'Welcome to Our Travel Section!', 100);
 });
