@@ -17,19 +17,17 @@ h1 {
 h2, h3 {
     font-weight: bold;
     margin: 20px 0px;
-    color: #4caf50;
+    color: #4caf50; 
     text-align: center;
 }
 
 h2, .section h2, .info h3 {
     font-size: large;
-    font-weight: bold; /* Added boldness for visibility */
-    color: #4caf50; /* Unifying heading colors */
     font-style: normal;
 }
 
 h3 {
-    font-size: medium; /* Adjusted for better readability */
+    font-size: medium; 
     text-decoration: none;
 }
 
@@ -57,13 +55,12 @@ h3 {
     clip: auto;
 }
 
-
 img, main img {
     max-width: 100%;
-    height: auto; /* Ensures images are responsive */
+    height: auto;
     border: solid 4px #4caf50;
     border-radius: 8px;
-    margin-bottom: 15px; /* Added space below images */
+    margin-bottom: 15px;
 }
 
 p, .toggle p {
@@ -97,32 +94,46 @@ p, .toggle p {
     color: white;
 }
 
-/* Layout & Flexbox for Gallery and Sections */
 .gallery, .info, .section {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around; /* Ensures content is spaced nicely */
+    justify-content: space-around;
     padding: 15px;
 }
 
-/* Adjusting for Mobile Views */
+.section, .info {
+    flex-direction: column;
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+    .section, .info {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    
+    .section > *, .info > * {
+        flex-basis: 48%;
+    }
+}
+
 @media (max-width: 768px) {
     .gallery img, .info, .section {
         flex-direction: column;
         width: 100%;
     }
-
+    
     nav ul {
         flex-direction: column;
         align-items: center;
     }
-
+    
     nav ul li {
-        margin: 10px 0; /* More space between nav items on mobile */
+        margin: 10px 0;
     }
 }
 
-/* Navigation & Theme Switch Styling */
 nav {
     display: flex;
     justify-content: center;
